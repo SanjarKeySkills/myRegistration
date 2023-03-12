@@ -210,7 +210,9 @@ const Register = () => {
                                     className="btn btn-primary">
                                     Register
                                 </button>
-                                <a href="#" className="btn btn-danger">
+                                <a
+                                    href="invoiceplus.kg"
+                                    className="btn btn-danger">
                                     Back
                                 </a>
                             </div>
