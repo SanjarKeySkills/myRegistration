@@ -1,9 +1,34 @@
+import { useState } from "react";
+
 const Register = () => {
+    const [id, idchange] = useState("");
+    const [name, namechange] = useState("");
+    const [password, passwordchange] = useState("");
+    const [email, emailchange] = useState("");
+    const [phone, phonechange] = useState("");
+    const [country, countrychange] = useState("");
+    const [address, addresschange] = useState("");
+    const [gender, genderchange] = useState("");
+
+    const handlesubmit = (e) => {
+        e.preventDefault();
+        let regobj = {
+            id,
+            name,
+            password,
+            email,
+            phone,
+            country,
+            address,
+            gender,
+        };
+        console.log(regobj);
+    };
     return (
         <div>
             <div>
                 <div className="offset-lg-3 col-lg-6">
-                    <form className="container">
+                    <form className="container" onSubmit={handlesubmit}>
                         <div className="card">
                             <div className="card-header">
                                 <h1>User registration</h1>
@@ -18,7 +43,12 @@ const Register = () => {
                                                     *
                                                 </span>
                                             </label>
-                                            <input className="form-control"></input>
+                                            <input
+                                                value={id}
+                                                onChange={(e) =>
+                                                    idchange(e.target.value)
+                                                }
+                                                className="form-control"></input>
                                         </div>
                                     </div>
 
@@ -31,6 +61,12 @@ const Register = () => {
                                                 </span>
                                             </label>
                                             <input
+                                                value={password}
+                                                onChange={(e) =>
+                                                    passwordchange(
+                                                        e.target.value
+                                                    )
+                                                }
                                                 type="password"
                                                 className="form-control"></input>
                                         </div>
@@ -44,7 +80,10 @@ const Register = () => {
                                                 </span>
                                             </label>
                                             <input
-                                                type="password"
+                                                value={name}
+                                                onChange={(e) =>
+                                                    namechange(e.target.value)
+                                                }
                                                 className="form-control"></input>
                                         </div>
                                     </div>
@@ -57,7 +96,10 @@ const Register = () => {
                                                 </span>
                                             </label>
                                             <input
-                                                type="password"
+                                                value={email}
+                                                onChange={(e) =>
+                                                    emailchange(e.target.value)
+                                                }
                                                 className="form-control"></input>
                                         </div>
                                     </div>
@@ -70,7 +112,10 @@ const Register = () => {
                                                 </span>
                                             </label>
                                             <input
-                                                type="password"
+                                                value={phone}
+                                                onChange={(e) =>
+                                                    phonechange(e.target.value)
+                                                }
                                                 className="form-control"></input>
                                         </div>
                                     </div>
@@ -82,7 +127,14 @@ const Register = () => {
                                                     *
                                                 </span>
                                             </label>
-                                            <select className="form-control">
+                                            <select
+                                                value={country}
+                                                onChange={(e) =>
+                                                    countrychange(
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="form-control">
                                                 <option value="kyrgyz">
                                                     Kyrgyzstan
                                                 </option>
@@ -97,7 +149,7 @@ const Register = () => {
                                                 </option>
                                             </select>
                                             <input
-                                                type="password"
+                                                value={id}
                                                 className="form-control"></input>
                                         </div>
                                     </div>
@@ -110,10 +162,16 @@ const Register = () => {
                                                 </span>
                                             </label>
                                             <textarea
+                                                value={address}
+                                                onChange={(e) =>
+                                                    addresschange(
+                                                        e.target.value
+                                                    )
+                                                }
                                                 name=""
                                                 id=""
                                                 cols="30"
-                                                rows="10"
+                                                rows="3"
                                                 className="form-control"></textarea>
                                         </div>
                                     </div>
@@ -124,12 +182,20 @@ const Register = () => {
                                             <br />
                                             <input
                                                 type="radio"
+                                                checked={gender === "male"}
+                                                onChange={(e) =>
+                                                    genderchange(e.target.value)
+                                                }
                                                 name="gender"
                                                 value="male"
                                                 className="app-check"></input>
                                             <label>Male</label>
                                             <input
                                                 type="radio"
+                                                checked={gender === "female"}
+                                                onChange={(e) =>
+                                                    genderchange(e.target.value)
+                                                }
                                                 name="gender"
                                                 value="female"
                                                 className="app-check"></input>
