@@ -38,6 +38,18 @@
 		padding: 1rem 0.5rem;
 }
 
+.Toastify__toast-icon {
+	width: 24px;
+	margin-right: 16px;
+}
+
+.Toastify__toast-body {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+
 app-check {
 	height: 20px;
 	width: 20px;

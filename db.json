@@ -259,6 +259,16 @@
       "country": "Singapore",
       "address": "",
       "gender": "female"
+    },
+    {
+      "id": "Rustam",
+      "name": "Blackfox",
+      "password": "54545454",
+      "email": "fox@mail.ru",
+      "phone": "64644747484849",
+      "country": "singapore",
+      "address": "555 Chui",
+      "gender": "male"
     }
   ]
 }

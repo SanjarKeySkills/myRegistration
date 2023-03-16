@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
     return (
         <div className="App">
-            <ToastContainer theme="colored"></ToastContainer>
+            {/* <ToastContainer theme="colored"></ToastContainer> */}
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>

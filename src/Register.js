@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -265,6 +266,10 @@ const Register = () => {
                                     className="btn btn-danger">
                                     Back
                                 </a>
+                                <ToastContainer
+                                    closeButton={false}
+                                    autoClose={5000}
+                                    theme="colored"></ToastContainer>
                             </div>
                         </div>
                     </form>
