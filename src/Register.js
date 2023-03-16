@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./App";
 
 const Register = () => {
     const [id, idchange] = useState("");
@@ -19,16 +20,35 @@ const Register = () => {
         let errormeassage = "Please enter the value in ";
         if (id === null || id === "") {
             isproceed = false;
-            errormeassage += "Username";
+            errormeassage += " Username";
         }
+
+        if (password === null || password === "") {
+            isproceed = false;
+            errormeassage += " Password";
+        }
+
+        if (email === null || email === "") {
+            isproceed = false;
+            errormeassage += " Email";
+        }
+
         if (!isproceed) {
             toast.warning(errormeassage);
+        } else {
+            if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+            } else {
+                isproceed = false;
+                toast.warning("Please enter the valid email");
+            }
         }
 
         return isproceed;
     };
 
     const handlesubmit = (e) => {
+        if (isValidate()) {
+        }
         e.preventDefault();
         let regobj = {
             id,
@@ -48,7 +68,9 @@ const Register = () => {
             body: JSON.stringify(regobj),
         })
             .then((res) => {
-                toast.success("Registered successfully");
+                toast.success("Registered successfully", {
+                    className: "toast-message",
+                });
                 navigate("/login");
             })
             .cath((err) => {

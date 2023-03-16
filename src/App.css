@@ -30,6 +30,14 @@
 .errmsg {
 	color: red;
 }
+
+.toast-message {
+	background-color: #000000;
+		color: #FFFFFF;
+		font-size: 20px;
+		padding: 1rem 0.5rem;
+}
+
 app-check {
 	height: 20px;
 	width: 20px;
