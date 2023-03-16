@@ -1,7 +1,74 @@
 {
   "user": [
-	
-
-
+    {
+      "id": "Sanjar",
+      "name": "Abakirov",
+      "password": "Defence513",
+      "email": "forest2004@mail.ru",
+      "phone": "996555343435",
+      "country": "",
+      "address": "Chui 23",
+      "gender": "male"
+    },
+    {
+      "id": "Sanjar Abba",
+      "name": "Abakirov",
+      "password": "Defence513",
+      "email": "forest2004@mail.ru",
+      "phone": "996555343435",
+      "country": "",
+      "address": "Chui 23",
+      "gender": "male"
+    },
+    {
+      "id": "Sam",
+      "name": "SexyBoy",
+      "password": "rederet",
+      "email": "sexyboy@mail.org",
+      "phone": "+99666999969996",
+      "country": "ukraine",
+      "address": "Red Stone str 13",
+      "gender": "male"
+    },
+    {
+      "id": "Hoho",
+      "name": "Hihi",
+      "password": "noooooon",
+      "email": "hihi@mail.org",
+      "phone": "38475",
+      "country": "Singapore",
+      "address": "ksdjgh 4 str",
+      "gender": "female"
+    },
+    {
+      "id": "Guuler",
+      "name": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "Singapore",
+      "address": "",
+      "gender": "female"
+    },
+    {
+      "id": "Forest",
+      "name": "Abba",
+      "password": "P@ssword",
+      "email": "abba@mail.ru",
+      "phone": "+996777555666",
+      "country": "Singapore",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "_mu1t97",
+      "name": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "Singapore",
+      "address": "",
+      "gender": "female"
+    }
   ]
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const [id, idchange] = useState("");
@@ -6,9 +8,25 @@ const Register = () => {
     const [password, passwordchange] = useState("");
     const [email, emailchange] = useState("");
     const [phone, phonechange] = useState("");
-    const [country, countrychange] = useState("");
+    const [country, countrychange] = useState("Singapore");
     const [address, addresschange] = useState("");
-    const [gender, genderchange] = useState("");
+    const [gender, genderchange] = useState("female");
+
+    const navigate = useNavigate();
+
+    const isValidate = () => {
+        let isproceed = true;
+        let errormeassage = "Please enter the value in ";
+        if (id === null || id === "") {
+            isproceed = false;
+            errormeassage += "Username";
+        }
+        if (!isproceed) {
+            toast.warning(errormeassage);
+        }
+
+        return isproceed;
+    };
 
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -22,7 +40,20 @@ const Register = () => {
             address,
             gender,
         };
-        console.log(regobj);
+        // console.log(regobj);
+
+        fetch("http://localhost:8000/user", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(regobj),
+        })
+            .then((res) => {
+                toast.success("Registered successfully");
+                navigate("/login");
+            })
+            .cath((err) => {
+                toast.error("Failed :" + err.message);
+            });
     };
     return (
         <div>
@@ -148,9 +179,7 @@ const Register = () => {
                                                     Singapore
                                                 </option>
                                             </select>
-                                            <input
-                                                value={id}
-                                                className="form-control"></input>
+                                            <input className="form-control"></input>
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
@@ -179,14 +208,13 @@ const Register = () => {
                                         <div className="form-group">
                                             <label>Gender</label>
                                             <br />
-                                            <br />
                                             <input
                                                 type="radio"
+                                                name="gender"
                                                 checked={gender === "male"}
                                                 onChange={(e) =>
                                                     genderchange(e.target.value)
                                                 }
-                                                name="gender"
                                                 value="male"
                                                 className="app-check"></input>
                                             <label>Male</label>

@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
     return (
         <div className="App">
-            <ToastContainer></ToastContainer>
+            <ToastContainer theme="colored"></ToastContainer>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
